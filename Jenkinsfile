@@ -3,15 +3,17 @@ pipeline {
 
     agent any
 
+    tools {
+        maven 'Maven'
+    }
+
     stages {
 
         stage("build") {
 
             steps {
                 echo 'building the application with maven'
-                withMaven {
                     batch "mvn clean install"
-                }
             }
 
         }
