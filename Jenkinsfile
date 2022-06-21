@@ -8,7 +8,10 @@ pipeline {
         stage("build") {
 
             steps {
-                echo 'building the application #2'
+                echo 'building the application with maven'
+                withMaven {
+                    batch "mvn clean install"
+                }
             }
 
         }
